@@ -1,5 +1,5 @@
 <div class="content">
-    <input [value]='inputNum' type="number" class='numInput' (change)="changeNum()" (keyup)="changeNum()">
+    <input [value]='inputNum' type="number" class='numInput' (input)="changeNum()" >
     <div class="circle" *ngFor="let num of numArr">
         {{num}}
     </div>
