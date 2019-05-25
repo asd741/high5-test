@@ -11,10 +11,9 @@ export class AppComponent {
     inputNum = 1;
     changeNum(e) {
         e = e || window.event;
-        let oldNum = this.inputNum || 0, nowNum = parseInt(e.target.value);
-        //input可能是個空值，所以 || 0，target.value可能是str，str與str比大小會出現脫離常識的結果，所以parseInt
-        this.inputNum = nowNum;
-
+        let oldNum = this.inputNum || 0,
+            nowNum = parseInt(e.target.value) || 0;
+        this.inputNum = e.target.value;
         //使用陣列渲染畫面開始
         if (nowNum > oldNum) {//新數據比舊數據多
             for (let i = oldNum; i < nowNum; i++) {
@@ -31,8 +30,6 @@ export class AppComponent {
             // console.log('刪除');
             return;
         }
-
-
         //使用陣列渲染畫面結束
     }
 }
