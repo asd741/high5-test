@@ -1,6 +1,6 @@
-<div>
-    <input [value]="I"> <!-- two-way binding -->
-    <div> <!-- for loop -->
-        <!-- i -->
+<div class="content">
+    <input [value]='inputNum' type="number" class='numInput' (change)="changeNum()" (keyup)="changeNum()">
+    <div class="circle" *ngFor="let num of numArr">
+        {{num}}
     </div>
 </div>
